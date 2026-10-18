@@ -1,0 +1,1977 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<meta name="theme-color" content="#000005">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="format-detection" content="telephone=no">
+<title>Món Quà Nhỏ 20/10 💐</title>
+<style>
+  :root{
+    --pink:#ff6b9d;
+    --safe-top: env(safe-area-inset-top, 0px);
+    --safe-bottom: env(safe-area-inset-bottom, 0px);
+    --safe-left: env(safe-area-inset-left, 0px);
+    --safe-right: env(safe-area-inset-right, 0px);
+  }
+  *{
+    margin:0;padding:0;box-sizing:border-box;
+    -webkit-tap-highlight-color:transparent;
+    -webkit-touch-callout:none;
+  }
+  html,body{
+    height:100%;
+    overscroll-behavior:none;
+    overflow:hidden;
+    position:fixed;
+    inset:0;
+    touch-action:manipulation;
+  }
+  body{
+    font-family:'Segoe UI',system-ui,-apple-system,sans-serif;
+    background:#000005;
+    color:#fff;
+    user-select:none;
+    -webkit-user-select:none;
+    -webkit-text-size-adjust:100%;
+  }
+
+  .galaxy-bg{
+    position:fixed;inset:0;z-index:0;
+    pointer-events:none;overflow:hidden;
+    background:#000005;
+  }
+  .nebula{
+    position:absolute;border-radius:50%;
+    filter:blur(60px);
+    opacity:.6;
+    will-change:transform;
+    mix-blend-mode:screen;
+  }
+  .neb-1{
+    width:110vmax;height:110vmax;left:-40vmax;top:-40vmax;
+    background:radial-gradient(circle,
+      rgba(150,60,230,.42) 0%,
+      rgba(90,30,160,.14) 45%,
+      rgba(90,30,160,0) 70%);
+    animation:neb1 38s ease-in-out infinite alternate;
+  }
+  .neb-2{
+    width:90vmax;height:90vmax;right:-32vmax;top:6vmax;
+    background:radial-gradient(circle,
+      rgba(255,80,170,.34) 0%,
+      rgba(180,40,115,.12) 45%,
+      rgba(180,40,115,0) 70%);
+    animation:neb2 46s ease-in-out infinite alternate;
+  }
+  .neb-3{
+    width:100vmax;height:100vmax;left:-10vmax;bottom:-46vmax;
+    background:radial-gradient(circle,
+      rgba(60,130,255,.30) 0%,
+      rgba(40,80,200,.12) 45%,
+      rgba(40,80,200,0) 70%);
+    animation:neb3 52s ease-in-out infinite alternate;
+  }
+  .neb-4{
+    width:70vmax;height:70vmax;left:35vmax;top:30vmax;
+    background:radial-gradient(circle,
+      rgba(255,160,220,.22) 0%,
+      rgba(200,100,200,.08) 45%,
+      rgba(200,100,200,0) 70%);
+    animation:neb4 44s ease-in-out infinite alternate;
+  }
+  @keyframes neb1{to{transform:translate(10vmax,8vmax) scale(1.18);}}
+  @keyframes neb2{to{transform:translate(-12vmax,10vmax) scale(1.14);}}
+  @keyframes neb3{to{transform:translate(8vmax,-10vmax) scale(1.22);}}
+  @keyframes neb4{to{transform:translate(-6vmax,-8vmax) scale(1.15);}}
+
+  #galaxy{
+    position:fixed;inset:0;z-index:1;
+    pointer-events:none;display:block;
+  }
+  .vignette{
+    position:fixed;inset:0;z-index:1;
+    pointer-events:none;
+    background:radial-gradient(ellipse at center,
+      transparent 0%, transparent 55%,
+      rgba(0,0,0,.45) 85%, rgba(0,0,0,.75) 100%);
+  }
+
+  .screen{
+    position:fixed;
+    top:0;left:0;right:0;bottom:0;
+    z-index:2;
+    display:flex;flex-direction:column;
+    align-items:center;justify-content:center;
+    padding:
+      calc(16px + var(--safe-top))
+      calc(16px + var(--safe-right))
+      calc(16px + var(--safe-bottom))
+      calc(16px + var(--safe-left));
+    overflow:hidden;
+    transition:opacity .8s ease,transform .8s ease;
+  }
+  .screen.hidden{opacity:0;pointer-events:none;transform:scale(1.05);}
+
+  .hearts-bg{position:absolute;inset:0;overflow:hidden;pointer-events:none;}
+  .float-heart{
+    position:absolute;bottom:-60px;opacity:0;
+    animation:floatUp linear infinite;
+    will-change:transform,opacity;
+  }
+  @keyframes floatUp{
+    0%{transform:translateY(0) rotate(0deg) scale(.6);opacity:0;}
+    15%{opacity:var(--o,.6);}
+    85%{opacity:var(--o,.6);}
+    100%{transform:translateY(-115vh) rotate(360deg) scale(1.1);opacity:0;}
+  }
+
+  .loader-heart{font-size:60px;animation:beat 1s ease-in-out infinite;
+    filter:drop-shadow(0 0 20px rgba(255,107,157,.65));}
+  @keyframes beat{0%,100%{transform:scale(1);}50%{transform:scale(1.18);}}
+  .loading-text{margin:18px 0 16px;color:#ffc9dd;letter-spacing:1px;font-size:14px;}
+  .progress{
+    width:min(230px,68vw);height:8px;border-radius:99px;
+    background:rgba(255,255,255,.12);overflow:hidden;
+  }
+  .progress-bar{
+    height:100%;width:0;border-radius:99px;
+    background:linear-gradient(90deg,#ff9ab8,#ff6b9d,#ff3d7f);
+    box-shadow:0 0 14px var(--pink);
+    transition:width .15s linear;
+  }
+
+  .hold-btn{
+    position:relative;
+    width:min(180px, 52vw);
+    aspect-ratio:1;
+    display:flex;align-items:center;justify-content:center;
+    cursor:pointer;
+    touch-action:none;
+    filter:drop-shadow(0 0 22px rgba(255,107,157,.4));
+    transition:filter .3s ease;
+  }
+  .hold-btn.holding{
+    filter:drop-shadow(0 0 34px rgba(255,107,157,.85));
+  }
+  .ring{position:absolute;inset:0;width:100%;height:100%;transform:rotate(-90deg);}
+  .ring-bg{fill:none;stroke:rgba(255,255,255,.12);stroke-width:6;}
+  .ring-progress{
+    fill:none;stroke:var(--pink);stroke-width:6;stroke-linecap:round;
+    filter:drop-shadow(0 0 8px var(--pink));
+    transition:filter .3s ease;
+  }
+  .hold-btn.holding .ring-progress{
+    filter:drop-shadow(0 0 14px var(--pink)) drop-shadow(0 0 28px var(--pink));
+  }
+  .hold-inner{
+    width:78%;height:78%;border-radius:50%;
+    background:radial-gradient(circle at 35% 30%,rgba(255,107,157,.35),rgba(255,107,157,.1));
+    border:1.5px solid rgba(255,107,157,.5);
+    display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;
+    animation:pulse 1.8s ease-in-out infinite;
+    transition:background .3s ease, border-color .3s ease;
+  }
+  .hold-btn.holding .hold-inner{
+    background:radial-gradient(circle at 35% 30%,rgba(255,107,157,.65),rgba(255,107,157,.28));
+    border-color:rgba(255,107,157,.95);
+  }
+  @keyframes pulse{
+    0%,100%{box-shadow:0 0 0 0 rgba(255,107,157,.45);}
+    50%{box-shadow:0 0 0 18px rgba(255,107,157,0);}
+  }
+  .hold-icon{font-size:clamp(24px,7vw,32px);}
+  .hold-text{font-size:clamp(11px,3.2vw,13px);color:#ffc9dd;letter-spacing:.5px;}
+
+  .wish-text{
+    position:absolute;
+    top:12%;left:0;right:0;
+    padding:0 24px;
+    text-align:center;
+    opacity:0;
+    animation:wishAppear 1.6s ease-out .35s forwards;
+    z-index:3;
+    pointer-events:none;
+  }
+  @keyframes wishAppear{
+    from{opacity:0;transform:translateY(-24px);}
+    to{opacity:1;transform:translateY(0);}
+  }
+  .wish-text::before, .wish-text::after{
+    content:'✨';
+    position:absolute;
+    font-size:22px;
+    filter:drop-shadow(0 0 10px rgba(255,200,230,.9));
+    animation:twinkle 2.8s ease-in-out infinite;
+  }
+  .wish-text::before{left:8%;top:15%;animation-delay:0s;}
+  .wish-text::after{right:8%;top:65%;animation-delay:1.4s;}
+  @keyframes twinkle{
+    0%,100%{opacity:.3;transform:scale(.85);}
+    50%{opacity:1;transform:scale(1.2);}
+  }
+  .wish-greeting{
+    font-size:clamp(28px, 8vw, 42px);
+    font-weight:800;
+    background:linear-gradient(135deg,#ffd1e3,#ff6b9d,#c9b6ff,#ffd1e3);
+    background-size:200% auto;
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+    filter:drop-shadow(0 0 22px rgba(255,107,157,.65));
+    margin-bottom:10px;
+    animation:glow 2.5s ease-in-out infinite alternate, shine 6s linear infinite;
+  }
+  @keyframes glow{to{filter:drop-shadow(0 0 32px rgba(255,107,157,.95));}}
+  @keyframes shine{to{background-position:200% center;}}
+  .wish-line{
+    font-size:clamp(13px, 3.7vw, 16px);
+    color:#ffb3cd;
+    line-height:1.65;
+    text-shadow:0 0 20px rgba(255,107,157,.4);
+    font-weight:500;
+  }
+
+  .lyric-container{
+    position:absolute;
+    top:45%;
+    left:50%;
+    transform:translate(-50%, -50%);
+    width:min(400px, 82vw);
+    text-align:center;
+    z-index:4;
+    pointer-events:none;
+    opacity:0;
+    transition:opacity 1s ease;
+  }
+  .lyric-container.show{opacity:1;}
+  .lyric-container::before,
+  .lyric-container::after{
+    content:'♪';
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    font-size:18px;
+    color:rgba(255,200,230,.75);
+    text-shadow:0 0 14px rgba(255,107,157,.9);
+    animation:noteFloat 2.4s ease-in-out infinite;
+  }
+  .lyric-container::before{left:-22px;}
+  .lyric-container::after{right:-22px;animation-delay:1.2s;}
+  @keyframes noteFloat{
+    0%,100%{opacity:.4;transform:translateY(-50%) scale(.9);}
+    50%{opacity:1;transform:translateY(-58%) scale(1.15);}
+  }
+  .lyric-line{
+    font-size:clamp(15px, 4.2vw, 19px);
+    font-weight:500;
+    font-style:italic;
+    color:#ffe6f2;
+    line-height:1.6;
+    letter-spacing:.3px;
+    min-height:3.2em;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-shadow:
+      0 0 12px rgba(255,180,220,.95),
+      0 0 28px rgba(255,107,157,.65),
+      0 0 48px rgba(180,90,255,.45);
+    animation:lyricIn 1.1s cubic-bezier(.2,.9,.3,1);
+  }
+  @keyframes lyricIn{
+    from{opacity:0;transform:translateY(24px) scale(.94);filter:blur(8px);}
+    to{opacity:1;transform:translateY(0) scale(1);filter:blur(0);}
+  }
+  .lyric-line.fade-out{animation:lyricOut .8s ease-in forwards;}
+  @keyframes lyricOut{
+    from{opacity:1;transform:translateY(0) scale(1);filter:blur(0);}
+    to{opacity:0;transform:translateY(-20px) scale(.96);filter:blur(4px);}
+  }
+
+  .galaxy-hint{
+    position:absolute;
+    bottom:calc(28px + var(--safe-bottom));
+    left:50%;
+    transform:translateX(-50%);
+    color:#ffe6f2;
+    font-size:13px;
+    letter-spacing:.4px;
+    line-height:1.5;
+    text-align:center;
+    opacity:0;
+    transition:opacity 1.2s ease;
+    text-shadow:0 0 14px rgba(255,107,157,.8), 0 0 28px rgba(255,107,157,.45);
+    pointer-events:none;
+    z-index:10;
+    white-space:normal;
+    max-width:min(320px, 80vw);
+    padding:9px 18px;
+    border-radius:999px;
+    background:linear-gradient(135deg,
+      rgba(255,107,157,.14),
+      rgba(180,90,255,.14));
+    border:1px solid rgba(255,107,157,.32);
+    backdrop-filter:blur(8px);
+    -webkit-backdrop-filter:blur(8px);
+    box-shadow:0 0 24px rgba(255,107,157,.25);
+    animation:hintPulse 2.8s ease-in-out infinite;
+  }
+  .galaxy-hint.show{opacity:1;}
+  @keyframes hintPulse{
+    0%,100%{transform:translateX(-50%) scale(1);}
+    50%{transform:translateX(-50%) scale(1.02);}
+  }
+
+  .flying-envelope{
+    position:absolute;
+    top:68%;left:50%;
+    width:min(200px, 55vw);
+    aspect-ratio:1.4;
+    transform:translate(-50%,-50%);
+    opacity:0;
+    pointer-events:none;
+    z-index:5;
+    perspective:1000px;
+    filter:blur(15px);
+    will-change:transform, opacity, filter;
+  }
+  .flying-envelope.flying{
+    animation:flyIn 2.2s cubic-bezier(.16, 1, .3, 1) forwards;
+  }
+  @keyframes flyIn{
+    0%{opacity:0;transform:translate(-50%,-50%) scale(0.03) rotate(-30deg);filter:blur(15px);}
+    55%{opacity:1;filter:blur(2px);}
+    100%{opacity:1;transform:translate(-50%,-50%) scale(1) rotate(0deg);filter:blur(0);}
+  }
+  .flying-envelope.landed{
+    opacity:1;
+    transform:translate(-50%,-50%) scale(1);
+    filter:none;
+    pointer-events:auto;
+    cursor:pointer;
+    animation:envelopeFloat 3.2s ease-in-out infinite;
+  }
+  @keyframes envelopeFloat{
+    0%,100%{transform:translate(-50%,-50%) translateY(0) scale(1);}
+    50%{transform:translate(-50%,-50%) translateY(-8px) scale(1);}
+  }
+  .flying-envelope.landed .fe-hint{
+    opacity:1;
+    animation:hintFade 1.8s ease-in-out infinite;
+  }
+  .flying-envelope.landed .fe-back{
+    animation:glowPulse 2.4s ease-in-out infinite;
+  }
+  @keyframes glowPulse{
+    0%,100%{box-shadow:0 0 22px rgba(255,107,157,.6), 0 0 45px rgba(255,107,157,.3);}
+    50%{box-shadow:0 0 32px rgba(255,107,157,1), 0 0 65px rgba(255,107,157,.5);}
+  }
+  .angel-wing{
+    position:absolute;
+    top:50%;
+    width:70px;
+    height:98px;
+    pointer-events:none;
+    z-index:0;
+    opacity:0;
+    transition:opacity .8s ease .6s;
+    filter:
+      drop-shadow(0 0 6px rgba(255,235,250,.95))
+      drop-shadow(0 0 16px rgba(255,160,210,.75))
+      drop-shadow(0 0 30px rgba(255,107,157,.45));
+  }
+  .flying-envelope.flying .angel-wing,
+  .flying-envelope.landed .angel-wing{opacity:1;}
+  .wing-left{right:calc(100% - 14px);transform:translateY(-50%);}
+  .wing-right{left:calc(100% - 14px);transform:translateY(-50%);}
+  .wing-animate{
+    transform-origin:85px 115px;
+    animation:wingFlap 2.2s ease-in-out infinite;
+    transform-box:view-box;
+  }
+  @keyframes wingFlap{
+    0%,100%{transform:rotate(2deg);}
+    50%{transform:rotate(-7deg);}
+  }
+  .fe-hint{
+    position:absolute;
+    bottom:-46px;left:50%;
+    transform:translateX(-50%);
+    white-space:nowrap;
+    font-size:14px;
+    color:#ffc9dd;
+    letter-spacing:.5px;
+    opacity:0;
+    pointer-events:none;
+    text-shadow:0 0 10px rgba(255,107,157,.7);
+    font-weight:500;
+  }
+  @keyframes hintFade{0%,100%{opacity:.55;}50%{opacity:1;}}
+  .fe-shape{
+    position:relative;
+    width:100%;height:100%;
+    transform-style:preserve-3d;
+    z-index:2;
+  }
+  .fe-back,.fe-front,.fe-flap,.fe-letter{position:absolute;inset:0;border-radius:10px;}
+  .fe-back{
+    background:linear-gradient(160deg,#c72f63,#a11f4c);
+    box-shadow:0 0 20px rgba(255,107,157,.4);
+  }
+  .fe-letter{
+    left:6%;top:6%;width:88%;height:88%;
+    background:linear-gradient(160deg,#fff,#ffe9f1);
+    display:flex;align-items:center;justify-content:center;
+    font-size:clamp(30px, 8vw, 46px);
+    z-index:2;
+    box-shadow:0 4px 12px rgba(0,0,0,.25);
+    transition:transform .6s cubic-bezier(.34,1.56,.64,1);
+  }
+  .fe-front{
+    background:linear-gradient(200deg,#ff7aa8,#e8407a);
+    clip-path:polygon(0 0,50% 42%,100% 0,100% 100%,0 100%);
+    z-index:3;
+    border-radius:10px;
+  }
+  .fe-flap{
+    height:56%;
+    background:linear-gradient(180deg,#ff8fb4,#e8407a);
+    clip-path:polygon(0 0,100% 0,50% 100%);
+    transform-origin:top center;
+    z-index:4;
+    border-radius:10px 10px 0 0;
+    transition:transform .55s ease;
+  }
+  .flying-envelope.opening .fe-flap{transform:rotateX(180deg);z-index:1;}
+  .flying-envelope.opening .fe-letter{transform:translateY(-50%) scale(1.1);z-index:5;}
+  .flying-envelope.zoom-out{
+    animation:zoomOut 0.85s cubic-bezier(.6,0,.8,.3) forwards !important;
+  }
+  @keyframes zoomOut{
+    0%{opacity:1;transform:translate(-50%,-50%) scale(1);}
+    100%{opacity:0;transform:translate(-50%,-50%) scale(3);filter:blur(15px);}
+  }
+
+  .letter-paper{
+    width:min(560px,92vw);
+    max-height:min(70vh, 70dvh);
+    overflow-y:auto;
+    -webkit-overflow-scrolling:touch;
+    overscroll-behavior:contain;
+    background:linear-gradient(165deg,#fffdf8,#ffeef5);
+    border-radius:18px;
+    padding:clamp(20px,5vw,32px);
+    box-shadow:0 24px 60px rgba(0,0,0,.6),0 0 0 1px rgba(255,107,157,.25),
+               inset 0 0 40px rgba(255,107,157,.06),
+               0 0 80px rgba(180,90,255,.22);
+    color:#5a1f36;
+    scrollbar-width:thin;
+    scrollbar-color:var(--pink) transparent;
+    opacity:0;
+  }
+  .letter-paper.show{animation:letterIn .95s cubic-bezier(.2,.9,.3,1) forwards;}
+  @keyframes letterIn{
+    from{opacity:0;transform:scale(.4) translateY(40px);filter:blur(10px);}
+    to{opacity:1;transform:scale(1) translateY(0);filter:blur(0);}
+  }
+  .letter-paper::-webkit-scrollbar{width:6px;}
+  .letter-paper::-webkit-scrollbar-thumb{background:var(--pink);border-radius:99px;}
+  .letter-line{
+    font-size:clamp(14px,4.1vw,17px);
+    line-height:1.75;
+    margin-bottom:14px;
+    font-family:'Times New Roman',Georgia,serif;
+  }
+  .letter-line:last-child{margin-bottom:0;}
+  .letter-line.hello{
+    font-weight:700;color:#b3255c;
+    font-family:'Segoe UI',system-ui,sans-serif;
+    font-size:clamp(14px,4vw,16px);
+    padding-bottom:10px;
+    border-bottom:1px dashed rgba(255,107,157,.45);
+  }
+  .replay-btn{
+    margin-top:16px;
+    padding:12px 26px;
+    border-radius:99px;
+    border:1.5px solid rgba(255,107,157,.6);
+    background:rgba(255,107,157,.15);
+    color:#ffd1e3;
+    font-size:14px;
+    font-family:inherit;
+    cursor:pointer;
+    opacity:0;pointer-events:none;
+    transition:all .4s ease;
+    touch-action:manipulation;
+  }
+  .replay-btn.show{opacity:1;pointer-events:auto;}
+  .replay-btn:active{transform:scale(.94);}
+
+  .petal{
+    position:absolute;top:-40px;
+    animation:fall linear forwards;
+    pointer-events:none;z-index:10;
+  }
+  @keyframes fall{
+    to{transform:translateY(110vh) rotate(360deg);opacity:0;}
+  }
+
+  .music-toggle{
+    position:fixed;
+    top:calc(12px + var(--safe-top));
+    right:calc(12px + var(--safe-right));
+    z-index:99999;
+    width:46px;height:46px;border-radius:50%;
+    background:rgba(255,107,157,.18);
+    border:1.5px solid rgba(255,107,157,.5);
+    color:#ffd1e3;font-size:19px;
+    display:flex;align-items:center;justify-content:center;
+    cursor:pointer;
+    backdrop-filter:blur(8px);
+    -webkit-backdrop-filter:blur(8px);
+    transition:transform .15s,background .2s;
+    font-family:inherit;
+    touch-action:manipulation;
+  }
+  .music-toggle:active{transform:scale(.9);}
+  .music-toggle.playing{
+    background:rgba(255,107,157,.4);
+    animation:pulseMusic 2s ease-in-out infinite;
+  }
+  @keyframes pulseMusic{
+    0%,100%{box-shadow:0 0 0 0 rgba(255,107,157,.55);}
+    50%{box-shadow:0 0 0 14px rgba(255,107,157,0);}
+  }
+
+  /* ==========================================================
+     🐾 STAR PET — Bé mèo sao dễ thương
+     ========================================================== */
+  .star-pet{
+    position:fixed;
+    left:0;top:0;
+    width:clamp(62px, 15vw, 86px);
+    height:clamp(62px, 15vw, 86px);
+    pointer-events:auto;
+    cursor:pointer;
+    z-index:4;
+    will-change:transform;
+    filter:drop-shadow(0 4px 14px rgba(255,100,180,.5));
+    transition:opacity .5s ease;
+    touch-action:none;
+  }
+  .star-pet.hidden{
+    opacity:0;
+    pointer-events:none;
+  }
+  .star-pet:active{
+    filter:drop-shadow(0 0 22px rgba(255,107,157,.95)) brightness(1.15);
+  }
+  .pet-body{
+    width:100%;
+    height:100%;
+    animation:petIdle 2s ease-in-out infinite;
+    transform-origin:center bottom;
+  }
+  @keyframes petIdle{
+    0%,100%{transform:translateY(0) scale(1,1);}
+    50%{transform:translateY(-3px) scale(1.02,0.98);}
+  }
+  .star-pet.walking .pet-body{
+    animation:petWalk 0.35s ease-in-out infinite;
+  }
+  @keyframes petWalk{
+    0%,100%{transform:translateY(0) scale(1,1);}
+    25%{transform:translateY(-5px) scale(0.98,1.02);}
+    75%{transform:translateY(-5px) scale(1.02,0.98);}
+  }
+  .star-pet.jumping .pet-body{
+    animation:petJump 0.65s cubic-bezier(0.3, 0, 0.6, 1);
+  }
+  @keyframes petJump{
+    0%{transform:translateY(0) scale(1,1);}
+    15%{transform:translateY(-5px) scale(0.9,1.1);}
+    50%{transform:translateY(-45px) scale(1.05,0.95);}
+    85%{transform:translateY(-5px) scale(1.1,0.9);}
+    100%{transform:translateY(0) scale(1,1);}
+  }
+  .star-pet.happy .pet-body{
+    animation:petHappy 0.4s ease-in-out 3;
+  }
+  @keyframes petHappy{
+    0%,100%{transform:translateY(0) scale(1) rotate(0deg);}
+    25%{transform:translateY(-8px) scale(1.1) rotate(-6deg);}
+    75%{transform:translateY(-8px) scale(1.1) rotate(6deg);}
+  }
+  .pet-eye{
+    animation:petEyeBlink 4s ease-in-out infinite;
+    transform-origin:center;
+    transform-box:fill-box;
+  }
+  @keyframes petEyeBlink{
+    0%,92%,100%{transform:scaleY(1);}
+    95%{transform:scaleY(0.1);}
+  }
+  .pet-tail{
+    animation:petTailWag 1.8s ease-in-out infinite;
+    transform-origin:72px 68px;
+    transform-box:view-box;
+  }
+  @keyframes petTailWag{
+    0%,100%{transform:rotate(-8deg);}
+    50%{transform:rotate(15deg);}
+  }
+  .pet-star{
+    animation:petStarTwinkle 2s ease-in-out infinite;
+    transform-origin:50px 33px;
+    transform-box:view-box;
+  }
+  @keyframes petStarTwinkle{
+    0%,100%{opacity:.95;transform:scale(1);}
+    50%{opacity:.55;transform:scale(.82);}
+  }
+
+  @media (max-width:360px){
+    .wish-greeting{font-size:24px;}
+    .wish-line{font-size:12px;}
+    .angel-wing{width:56px;height:80px;}
+    .letter-paper{padding:18px;border-radius:14px;}
+    .music-toggle{width:42px;height:42px;font-size:17px;}
+    .galaxy-hint{font-size:11px;padding:7px 14px;max-width:86vw;}
+    .lyric-line{font-size:14px;}
+    .lyric-container::before{left:-14px;}
+    .lyric-container::after{right:-14px;}
+  }
+
+  @media (max-height:500px){
+    .wish-text{top:6%;}
+    .wish-greeting{font-size:20px;margin-bottom:6px;}
+    .wish-line{font-size:11px;}
+    .flying-envelope{top:66%;width:min(150px,40vw);}
+    .angel-wing{width:52px;height:74px;}
+    .loading-text{margin:10px 0;}
+    .loader-heart{font-size:44px;}
+    .hold-btn{width:min(140px,40vw);}
+    .letter-paper{max-height:80vh;}
+    .galaxy-hint{bottom:10px;font-size:10px;padding:5px 12px;}
+    .lyric-container{top:44%;}
+    .lyric-line{font-size:13px;}
+  }
+</style>
+</head>
+<body>
+
+<div class="galaxy-bg">
+  <div class="nebula neb-1"></div>
+  <div class="nebula neb-2"></div>
+  <div class="nebula neb-3"></div>
+  <div class="nebula neb-4"></div>
+</div>
+<canvas id="galaxy"></canvas>
+<div class="vignette"></div>
+
+<button class="music-toggle" id="musicToggle" aria-label="Bật/tắt nhạc">🔇</button>
+<div id="ytPlayer" style="position:fixed;left:-9999px;top:-9999px;width:1px;height:1px;opacity:0;pointer-events:none;"></div>
+
+<div class="screen" id="screen-loading">
+  <div class="loader-heart">💐</div>
+  <p class="loading-text">Đang chuẩn bị món quà...</p>
+  <div class="progress"><div class="progress-bar" id="progressBar"></div></div>
+</div>
+
+<div class="screen hidden" id="screen-hold">
+  <div class="hearts-bg" id="hearts2"></div>
+  <div class="hold-btn" id="holdBtn">
+    <svg class="ring" viewBox="0 0 120 120">
+      <circle class="ring-bg" cx="60" cy="60" r="54"></circle>
+      <circle class="ring-progress" cx="60" cy="60" r="54" id="ringProgress"></circle>
+    </svg>
+    <div class="hold-inner">
+      <span class="hold-icon">🌸</span>
+      <span class="hold-text">Giữ để bắt đầu</span>
+    </div>
+  </div>
+</div>
+
+<div class="screen hidden" id="screen-galaxy">
+  <div class="hearts-bg" id="hearts3"></div>
+  <div class="wish-text" id="wishText">
+    <p class="wish-greeting">Gửi bạn 💐</p>
+    <p class="wish-line">Nhân ngày 20/10 — chúc bạn luôn xinh đẹp,<br>mạnh khỏe và thật nhiều niềm vui ✨</p>
+  </div>
+
+  <!-- 🐾 STAR PET -->
+  <div class="star-pet hidden" id="starPet">
+    <div class="pet-body">
+      <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+        <rect width="100" height="100" fill="none" pointer-events="all"/>
+        <defs>
+          <radialGradient id="petAura" cx="0.5" cy="0.5" r="0.5">
+            <stop offset="0%" stop-color="#ffd1e3" stop-opacity="0.55"/>
+            <stop offset="100%" stop-color="#ffd1e3" stop-opacity="0"/>
+          </radialGradient>
+          <linearGradient id="petBodyGrad" x1="0.3" y1="0" x2="0.7" y2="1">
+            <stop offset="0%" stop-color="#fff5fa"/>
+            <stop offset="55%" stop-color="#ffd1e3"/>
+            <stop offset="100%" stop-color="#ff9ec8"/>
+          </linearGradient>
+        </defs>
+
+        <circle cx="50" cy="60" r="45" fill="url(#petAura)"/>
+
+        <path class="pet-tail" d="M72 68 Q88 62, 84 82 Q80 76, 76 80"
+              fill="none" stroke="#ff9ec8" stroke-width="5" stroke-linecap="round"/>
+
+        <path d="M28 42 L22 20 L42 34 Z" fill="#ff9ec8"/>
+        <path d="M72 42 L78 20 L58 34 Z" fill="#ff9ec8"/>
+        <path d="M30 40 L26 26 L38 36 Z" fill="#ffd1e3"/>
+        <path d="M70 40 L74 26 L62 36 Z" fill="#ffd1e3"/>
+
+        <ellipse cx="50" cy="62" rx="30" ry="28" fill="url(#petBodyGrad)"/>
+        <ellipse cx="50" cy="62" rx="30" ry="28" fill="none" stroke="#ff7eb3" stroke-width="0.8" opacity="0.5"/>
+
+        <ellipse cx="28" cy="68" rx="5" ry="3" fill="#ff7eb3" opacity="0.5"/>
+        <ellipse cx="72" cy="68" rx="5" ry="3" fill="#ff7eb3" opacity="0.5"/>
+
+        <g class="pet-eye">
+          <ellipse cx="38" cy="60" rx="5" ry="6" fill="#3a1f3d"/>
+          <circle cx="40" cy="57.5" r="2" fill="#fff"/>
+          <circle cx="37" cy="62" r="1" fill="#fff"/>
+        </g>
+        <g class="pet-eye">
+          <ellipse cx="62" cy="60" rx="5" ry="6" fill="#3a1f3d"/>
+          <circle cx="64" cy="57.5" r="2" fill="#fff"/>
+          <circle cx="61" cy="62" r="1" fill="#fff"/>
+        </g>
+
+        <path d="M45 70 Q47.5 73, 50 70 Q52.5 73, 55 70"
+              stroke="#c43070" stroke-width="1.6" fill="none"
+              stroke-linecap="round" stroke-linejoin="round"/>
+
+        <path class="pet-star" d="M50 26 l1.8 4.2 l4.5 0.4 l-3.5 3 l1 4.4 l-3.8 -2.6 l-3.8 2.6 l1 -4.4 l-3.5 -3 l4.5 -0.4 z"
+              fill="#ffe080"/>
+      </svg>
+    </div>
+  </div>
+
+  <div class="lyric-container" id="lyricContainer">
+    <p class="lyric-line" id="lyricLine"></p>
+  </div>
+
+  <div class="galaxy-hint" id="galaxyHint">✨ Bạn đợi mình chút nha, mình đang mang quà đến cho bạn đây ✨</div>
+
+  <div class="flying-envelope" id="flyingEnvelope">
+    <svg class="angel-wing wing-left" viewBox="0 0 100 140">
+      <g class="wing-animate" stroke="rgba(255,220,240,0.85)" stroke-width="0.8">
+        <ellipse cx="58" cy="35" rx="11" ry="36" transform="rotate(-20 58 35)" fill="rgba(255,255,255,0.95)"/>
+        <ellipse cx="45" cy="55" rx="12" ry="40" transform="rotate(-40 45 55)" fill="rgba(255,248,252,0.92)"/>
+        <ellipse cx="35" cy="82" rx="12" ry="42" transform="rotate(-60 35 82)" fill="rgba(255,235,247,0.88)"/>
+        <ellipse cx="35" cy="108" rx="11" ry="36" transform="rotate(-78 35 108)" fill="rgba(255,220,240,0.82)"/>
+        <ellipse cx="45" cy="128" rx="9" ry="26" transform="rotate(-95 45 128)" fill="rgba(255,200,230,0.75)"/>
+      </g>
+    </svg>
+    <svg class="angel-wing wing-right" viewBox="0 0 100 140">
+      <g transform="translate(100,0) scale(-1,1)">
+        <g class="wing-animate" stroke="rgba(255,220,240,0.85)" stroke-width="0.8">
+          <ellipse cx="58" cy="35" rx="11" ry="36" transform="rotate(-20 58 35)" fill="rgba(255,255,255,0.95)"/>
+          <ellipse cx="45" cy="55" rx="12" ry="40" transform="rotate(-40 45 55)" fill="rgba(255,248,252,0.92)"/>
+          <ellipse cx="35" cy="82" rx="12" ry="42" transform="rotate(-60 35 82)" fill="rgba(255,235,247,0.88)"/>
+          <ellipse cx="35" cy="108" rx="11" ry="36" transform="rotate(-78 35 108)" fill="rgba(255,220,240,0.82)"/>
+          <ellipse cx="45" cy="128" rx="9" ry="26" transform="rotate(-95 45 128)" fill="rgba(255,200,230,0.75)"/>
+        </g>
+      </g>
+    </svg>
+
+    <div class="fe-shape">
+      <div class="fe-back"></div>
+      <div class="fe-letter">💌</div>
+      <div class="fe-front"></div>
+      <div class="fe-flap"></div>
+    </div>
+    <div class="fe-hint">Chạm để mở 💌</div>
+  </div>
+</div>
+
+<div class="screen hidden" id="screen-letter">
+  <div class="hearts-bg" id="hearts4"></div>
+  <div class="letter-paper" id="letterPaper">
+    <div id="letterContent"></div>
+  </div>
+  <button class="replay-btn" id="replayBtn">Xem lại 💐</button>
+</div>
+
+<script>
+/* ==========================================================
+   ⚙️ CẤU HÌNH
+   ========================================================== */
+const HOLD_MS = 1600;
+const GALAXY_DELAY_MS = 30000;
+const VIDEO_ID = 'XAhYHdc516k';
+const MUSIC_VOLUME = 55;
+
+const LYRIC_LINES = [
+  'Khi bên anh em thấy điều chi',
+  'Khi bên anh em thấy điều gì',
+  'Nước mắt rơi gần kề làn mi',
+  'Chẳng còn những giây phút',
+  'Chẳng còn những ân tình',
+  'Gió mang em rời xa nơi đây',
+  'Uhm...',
+  'Khi xa anh em nhớ về ai (về ai)',
+  'Khi xa anh em nhớ một người',
+  'Chắc không phải một người như anh (hoh)',
+  'Người từng làm em khóc',
+  'Người từng khiến em buồn',
+  'Buông bàn tay rời xa lặng thinh bước đi',
+  'Hạt mưa dơi bùa vây trai tim hiu quanh',
+  'Ngàn yêu thương vụt tan bông xa'
+];
+
+const LETTER_LINES = [
+  'Xin chào, mình là Nuana nhận lệnh của Đạ Ca Nghĩa đẹp trai gửi lời chúc đến bạn 🥰',
+  'Gửi bạn thân mến 💐',
+  'Nhân ngày Phụ nữ Việt Nam 20/10, mình gửi đến bạn món quà nhỏ này — không gì to tát, chỉ là chút tấm lòng để bạn biết rằng bạn là một người bạn rất tuyệt vời.',
+  'Cảm ơn bạn vì đã luôn ở đó, đã cùng mình đi qua bao nhiêu chuyện vui buồn, và đã là một phần không thể thiếu trong những ngày tháng đẹp nhất.',
+  'Chúc bạn 20/10 thật nhiều niềm vui, luôn xinh đẹp, mạnh khỏe, học giỏi và gặp thật nhiều điều may mắn nhé!',
+];
+
+const $ = id => document.getElementById(id);
+const sleep = ms => new Promise(r => setTimeout(r, ms));
+const isMobile = () => window.innerWidth < 768;
+
+function showScreen(id){
+  document.querySelectorAll('.screen').forEach(s => s.classList.add('hidden'));
+  $(id).classList.remove('hidden');
+}
+
+document.addEventListener('touchmove', function(e){
+  if(e.target.closest('.letter-paper')) return;
+  if(e.touches.length > 1){ e.preventDefault(); }
+}, { passive: false });
+
+let lastTouchEnd = 0;
+document.addEventListener('touchend', function(e){
+  const now = Date.now();
+  if(now - lastTouchEnd <= 320){ e.preventDefault(); }
+  lastTouchEnd = now;
+}, { passive: false });
+
+document.addEventListener('contextmenu', e => e.preventDefault());
+document.addEventListener('gesturestart', e => e.preventDefault());
+
+/* ==========================================================
+   🌌 GALAXY CANVAS
+   ========================================================== */
+(function galaxyEffect(){
+  const canvas = document.getElementById('galaxy');
+  const ctx = canvas.getContext('2d');
+
+  let W = 0, H = 0, DPR = 1;
+  let starLayers = [[], [], []];
+  let galaxyParticles = [];
+  let galaxyCenter = { x: 0, y: 0 };
+  let galaxyRadius = 0;
+  let dust = [];
+  let meteors = [];
+  let bursts = [];
+  let time = 0;
+  let lastMeteorTime = 0;
+  let rafId = null;
+
+  const STAR_COLORS = ['#ffffff','#ffd8ec','#c9b6ff','#a8d8ff','#ffe9a8','#ffc2e0'];
+  const DUST_COLORS = ['#ffd8ec','#c9b6ff','#a8d8ff','#ffffff','#ffc2e0'];
+  const BURST_COLORS = ['#ffffff','#ffd8ec','#c9b6ff','#ffb8e0','#ffe9a8','#b890ff'];
+  const pick = arr => arr[(Math.random() * arr.length) | 0];
+
+  function resize(){
+    DPR = Math.min(window.devicePixelRatio || 1, 2);
+    W = window.innerWidth;
+    H = window.innerHeight;
+    canvas.width  = Math.floor(W * DPR);
+    canvas.height = Math.floor(H * DPR);
+    canvas.style.width  = W + 'px';
+    canvas.style.height = H + 'px';
+    ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
+    build();
+  }
+
+  function build(){
+    buildStars();
+    buildGalaxy();
+    buildDust();
+    meteors = [];
+    bursts = [];
+  }
+
+  function makeStar(minR, maxR, minA, maxA){
+    return {
+      x: Math.random() * W,
+      y: Math.random() * H,
+      r: minR + Math.random() * (maxR - minR),
+      baseA: minA + Math.random() * (maxA - minA),
+      phase: Math.random() * Math.PI * 2,
+      speed: 0.5 + Math.random() * 2,
+      drift: (Math.random() - 0.5) * 0.08,
+      color: pick(STAR_COLORS)
+    };
+  }
+
+  function buildStars(){
+    const base = isMobile() ? 90 : 160;
+    starLayers[0] = [];
+    for(let i = 0; i < base; i++) starLayers[0].push(makeStar(0.35, 0.85, 0.15, 0.4));
+    starLayers[1] = [];
+    const midCount = Math.floor(base * 0.5);
+    for(let i = 0; i < midCount; i++) starLayers[1].push(makeStar(0.7, 1.3, 0.3, 0.65));
+    starLayers[2] = [];
+    const nearCount = Math.floor(base * 0.15);
+    for(let i = 0; i < nearCount; i++) starLayers[2].push(makeStar(1.1, 2.1, 0.5, 1));
+  }
+
+  function buildGalaxy(){
+    if(W > H){
+      galaxyCenter.x = W * 0.72;
+      galaxyCenter.y = H * 0.28;
+      galaxyRadius = Math.min(W, H) * 0.55;
+    } else {
+      galaxyCenter.x = W * 0.62;
+      galaxyCenter.y = H * 0.22;
+      galaxyRadius = Math.min(W, H) * 0.5;
+    }
+
+    galaxyParticles = [];
+    const arms = 4;
+    const perArm = isMobile() ? 90 : 200;
+    const step = (Math.PI * 2) / arms;
+
+    for(let a = 0; a < arms; a++){
+      for(let i = 0; i < perArm; i++){
+        const t = i / perArm;
+        const dist = t * galaxyRadius;
+        const angle = a * step + t * Math.PI * 3.6;
+        const spread = (Math.random() - 0.5) * (0.35 + t * 0.55);
+        const fa = angle + spread;
+        const px = Math.cos(fa) * dist;
+        const py = Math.sin(fa) * dist * 0.35;
+
+        let color;
+        const r = Math.random();
+        if(t < 0.2)      color = r < 0.5 ? '#ffffff' : '#ffe0f0';
+        else if(t < 0.5) color = r < 0.4 ? '#ffb8e0' : (r < 0.7 ? '#e0b8ff' : '#ffffff');
+        else if(t < 0.8) color = r < 0.4 ? '#b890ff' : (r < 0.7 ? '#90b8ff' : '#d0a0ff');
+        else             color = r < 0.5 ? '#7090dd' : '#a070d0';
+
+        galaxyParticles.push({
+          px, py,
+          size: 0.5 + Math.random() * 1.6,
+          bright: 0.15 + Math.random() * 0.5 * (1 - t * 0.55),
+          color
+        });
+      }
+    }
+  }
+
+  function buildDust(){
+    dust = [];
+    const count = isMobile() ? 25 : 55;
+    for(let i = 0; i < count; i++){
+      dust.push({
+        x: Math.random() * W,
+        y: Math.random() * H,
+        r: 0.4 + Math.random() * 1,
+        vx: (Math.random() - 0.5) * 0.14,
+        vy: (Math.random() - 0.5) * 0.14,
+        alpha: 0.15 + Math.random() * 0.3,
+        phase: Math.random() * Math.PI * 2,
+        color: pick(DUST_COLORS)
+      });
+    }
+  }
+
+  function drawStars(){
+    for(let li = 0; li < 3; li++){
+      const layer = starLayers[li];
+      const speedMult = 0.5 + li * 0.6;
+      for(let i = 0; i < layer.length; i++){
+        const s = layer[i];
+        const tw = Math.sin(time * s.speed + s.phase);
+        const alpha = s.baseA + tw * 0.3;
+        if(alpha <= 0.02) continue;
+
+        s.x += s.drift * speedMult;
+        if(s.x < -3) s.x = W + 3;
+        else if(s.x > W + 3) s.x = -3;
+
+        ctx.globalAlpha = alpha;
+        ctx.fillStyle = s.color;
+        ctx.beginPath();
+        ctx.arc(s.x, s.y, s.r, 0, 6.28318);
+        ctx.fill();
+
+        if(s.r > 1.2){
+          ctx.globalAlpha = alpha * 0.22;
+          ctx.beginPath();
+          ctx.arc(s.x, s.y, s.r * 3.4, 0, 6.28318);
+          ctx.fill();
+        }
+
+        if(li === 2 && s.r > 1.7 && alpha > 0.5){
+          ctx.globalAlpha = alpha * 0.28;
+          ctx.strokeStyle = s.color;
+          ctx.lineWidth = 0.6;
+          const L = s.r * 5;
+          ctx.beginPath();
+          ctx.moveTo(s.x - L, s.y); ctx.lineTo(s.x + L, s.y);
+          ctx.moveTo(s.x, s.y - L); ctx.lineTo(s.x, s.y + L);
+          ctx.stroke();
+        }
+      }
+    }
+  }
+
+  function drawGalaxy(){
+    const rot = time * 0.06;
+    const cos = Math.cos(rot), sin = Math.sin(rot);
+
+    ctx.globalCompositeOperation = 'lighter';
+
+    const core = ctx.createRadialGradient(
+      galaxyCenter.x, galaxyCenter.y, 0,
+      galaxyCenter.x, galaxyCenter.y, galaxyRadius * 0.42
+    );
+    core.addColorStop(0,   'rgba(255, 235, 250, 0.20)');
+    core.addColorStop(0.4, 'rgba(220, 130, 240, 0.10)');
+    core.addColorStop(1,   'rgba(100, 50, 180, 0)');
+    ctx.globalAlpha = 1;
+    ctx.fillStyle = core;
+    ctx.beginPath();
+    ctx.arc(galaxyCenter.x, galaxyCenter.y, galaxyRadius * 0.42, 0, 6.28318);
+    ctx.fill();
+
+    for(let i = 0; i < galaxyParticles.length; i++){
+      const p = galaxyParticles[i];
+      const rx = p.px * cos - p.py * sin;
+      const ry = p.px * sin + p.py * cos;
+      ctx.globalAlpha = p.bright;
+      ctx.fillStyle = p.color;
+      ctx.beginPath();
+      ctx.arc(galaxyCenter.x + rx, galaxyCenter.y + ry, p.size, 0, 6.28318);
+      ctx.fill();
+    }
+
+    ctx.globalCompositeOperation = 'source-over';
+  }
+
+  function drawDust(){
+    for(let i = 0; i < dust.length; i++){
+      const d = dust[i];
+      d.x += d.vx;
+      d.y += d.vy;
+      if(d.x < -10) d.x = W + 10;
+      if(d.x > W + 10) d.x = -10;
+      if(d.y < -10) d.y = H + 10;
+      if(d.y > H + 10) d.y = -10;
+
+      const a = d.alpha * (0.7 + Math.sin(time * 1.5 + d.phase) * 0.3);
+      ctx.globalAlpha = a;
+      ctx.fillStyle = d.color;
+      ctx.beginPath();
+      ctx.arc(d.x, d.y, d.r, 0, 6.28318);
+      ctx.fill();
+
+      ctx.globalAlpha = a * 0.4;
+      ctx.beginPath();
+      ctx.arc(d.x, d.y, d.r * 3, 0, 6.28318);
+      ctx.fill();
+    }
+  }
+
+  function drawBursts(){
+    for(let i = bursts.length - 1; i >= 0; i--){
+      const b = bursts[i];
+      b.x += b.vx;
+      b.y += b.vy;
+      b.vx *= 0.96;
+      b.vy *= 0.96;
+      b.life -= b.decay;
+
+      if(b.life <= 0){ bursts.splice(i, 1); continue; }
+
+      ctx.globalCompositeOperation = 'lighter';
+      ctx.globalAlpha = b.life * 0.35;
+      ctx.fillStyle = b.color;
+      ctx.beginPath();
+      ctx.arc(b.x, b.y, b.r * 4, 0, 6.28318);
+      ctx.fill();
+
+      ctx.globalAlpha = b.life;
+      ctx.beginPath();
+      ctx.arc(b.x, b.y, b.r, 0, 6.28318);
+      ctx.fill();
+      ctx.globalCompositeOperation = 'source-over';
+    }
+  }
+
+  function spawnMeteor(){
+    const fromLeft = Math.random() < 0.7;
+    const angle = fromLeft
+      ? (Math.PI / 4 + Math.random() * 0.3)
+      : (Math.PI * 0.75 + Math.random() * 0.3);
+    const speed = 5 + Math.random() * 5;
+    meteors.push({
+      x: fromLeft ? Math.random() * W * 0.4 : W * 0.6 + Math.random() * W * 0.4,
+      y: Math.random() * H * 0.35,
+      vx: Math.cos(angle) * speed,
+      vy: Math.sin(angle) * speed,
+      len: 100 + Math.random() * 130,
+      life: 1,
+      pink: Math.random() < 0.3
+    });
+  }
+
+  function drawMeteors(){
+    for(let i = meteors.length - 1; i >= 0; i--){
+      const m = meteors[i];
+      m.x += m.vx;
+      m.y += m.vy;
+      m.life -= 0.008;
+
+      if(m.life <= 0 || m.x > W + 320 || m.y > H + 320){
+        meteors.splice(i, 1); continue;
+      }
+
+      const v = Math.hypot(m.vx, m.vy) || 1;
+      const tx = m.x - (m.vx / v) * m.len;
+      const ty = m.y - (m.vy / v) * m.len;
+      const col = m.pink ? '255,190,235' : '255,255,255';
+      const grad = ctx.createLinearGradient(m.x, m.y, tx, ty);
+      grad.addColorStop(0,    'rgba(' + col + ',' + m.life + ')');
+      grad.addColorStop(0.4,  'rgba(200,180,255,' + (m.life * 0.6) + ')');
+      grad.addColorStop(1,    'rgba(150,130,255,0)');
+
+      ctx.globalAlpha = 1;
+      ctx.strokeStyle = grad;
+      ctx.lineWidth = 2;
+      ctx.lineCap = 'round';
+      ctx.beginPath();
+      ctx.moveTo(m.x, m.y);
+      ctx.lineTo(tx, ty);
+      ctx.stroke();
+
+      ctx.globalAlpha = m.life;
+      ctx.fillStyle = '#ffffff';
+      ctx.beginPath();
+      ctx.arc(m.x, m.y, 2, 0, 6.28318);
+      ctx.fill();
+      ctx.globalAlpha = m.life * 0.5;
+      ctx.beginPath();
+      ctx.arc(m.x, m.y, 6, 0, 6.28318);
+      ctx.fill();
+    }
+  }
+
+  function loop(){
+    rafId = requestAnimationFrame(loop);
+    time += 0.016;
+    ctx.clearRect(0, 0, W, H);
+    drawStars();
+    drawGalaxy();
+    drawDust();
+    drawBursts();
+    drawMeteors();
+    ctx.globalAlpha = 1;
+
+    if(time - lastMeteorTime > 3 && meteors.length < 3 && Math.random() < 0.015){
+      lastMeteorTime = time;
+      spawnMeteor();
+    }
+  }
+
+  resize();
+  loop();
+
+  let rt = null;
+  window.addEventListener('resize', () => {
+    clearTimeout(rt);
+    rt = setTimeout(resize, 220);
+  });
+  window.addEventListener('orientationchange', () => setTimeout(resize, 320));
+
+  document.addEventListener('visibilitychange', () => {
+    if(document.hidden){
+      if(rafId) cancelAnimationFrame(rafId);
+      rafId = null;
+    } else if(!rafId){
+      loop();
+    }
+  });
+
+  window.GalaxyFX = {
+    burst(x, y){
+      const count = isMobile() ? 14 : 20;
+      for(let i = 0; i < count; i++){
+        const angle = Math.random() * Math.PI * 2;
+        const speed = 1 + Math.random() * 3.2;
+        bursts.push({
+          x, y,
+          vx: Math.cos(angle) * speed,
+          vy: Math.sin(angle) * speed,
+          r: 0.8 + Math.random() * 1.6,
+          life: 1,
+          decay: 0.008 + Math.random() * 0.012,
+          color: pick(BURST_COLORS)
+        });
+      }
+    },
+    meteorFrom(x, y){
+      const angle = Math.PI / 4 + (Math.random() - 0.5) * 0.6;
+      const speed = 6 + Math.random() * 4;
+      meteors.push({
+        x, y,
+        vx: Math.cos(angle) * speed,
+        vy: Math.sin(angle) * speed,
+        len: 100 + Math.random() * 90,
+        life: 1,
+        pink: Math.random() < 0.4
+      });
+    }
+  };
+})();
+
+/* ==========================================================
+   ✨ SPARKLE BURST
+   ========================================================== */
+function sparkleBurst(originEl, count){
+  const rect = originEl.getBoundingClientRect();
+  const cx = rect.left + rect.width / 2;
+  const cy = rect.top + rect.height / 2;
+  const n = count || 24;
+  for(let i = 0; i < n; i++){
+    const s = document.createElement('span');
+    s.textContent = Math.random() < 0.4 ? '✨' : (Math.random() < 0.5 ? '💫' : '⭐');
+    s.style.cssText = 'position:fixed;left:' + cx + 'px;top:' + cy + 'px;' +
+      'font-size:' + (10 + Math.random() * 14) + 'px;pointer-events:none;z-index:9999;' +
+      'transition:transform 1.1s cubic-bezier(.2,.7,.3,1), opacity 1.1s ease;opacity:1;' +
+      'transform:translate(-50%,-50%);will-change:transform,opacity;';
+    document.body.appendChild(s);
+    const angle = Math.random() * Math.PI * 2;
+    const dist = 70 + Math.random() * 130;
+    requestAnimationFrame(() => {
+      s.style.transform =
+        'translate(' + (Math.cos(angle) * dist) + 'px,' + (Math.sin(angle) * dist) + 'px) ' +
+        'rotate(' + (Math.random() * 720 - 360) + 'deg) scale(.4)';
+      s.style.opacity = '0';
+    });
+    setTimeout(() => s.remove(), 1200);
+  }
+}
+
+/* ==========================================================
+   🐾 STAR PET — Bé mèo sao dễ thương (MỚI)
+   ========================================================== */
+const StarPet = {
+  el: null,
+  x: 0, y: 0,
+  targetX: 0, targetY: 0,
+  state: 'idle',
+  stateTimer: 0,
+  facing: 1,
+  visible: false,
+  rafId: null,
+  lastTap: 0,
+  petW: 70, petH: 70,
+  initialized: false,
+
+  init(){
+    if(this.initialized) return;
+    this.el = document.getElementById('starPet');
+    if(!this.el) return;
+
+    this.el.addEventListener('pointerdown', e => this.onTap(e));
+    this.el.addEventListener('click', e => e.stopPropagation());
+
+    window.addEventListener('resize', () => {
+      this.measure();
+      if(this.visible){
+        const pad = 60;
+        this.x = Math.max(pad, Math.min(window.innerWidth - pad, this.x));
+        this.y = Math.max(pad, Math.min(window.innerHeight - pad, this.y));
+        this.applyTransform();
+      }
+    });
+
+    this.initialized = true;
+  },
+
+  measure(){
+    if(this.el){
+      this.petW = this.el.offsetWidth || 70;
+      this.petH = this.el.offsetHeight || 70;
+    }
+  },
+
+  start(){
+    this.init();
+    if(!this.el) return;
+
+    this.x = window.innerWidth * 0.2;
+    this.y = window.innerHeight * 0.5;
+    this.targetX = this.x;
+    this.targetY = this.y;
+    this.state = 'idle';
+    this.stateTimer = 800;
+    this.facing = 1;
+
+    this.el.classList.remove('hidden', 'walking', 'jumping', 'happy');
+    this.measure();
+    this.applyTransform();
+
+    this.visible = true;
+    if(this.rafId) cancelAnimationFrame(this.rafId);
+    this.loop();
+  },
+
+  stop(){
+    this.visible = false;
+    if(this.el) this.el.classList.add('hidden');
+    if(this.rafId){
+      cancelAnimationFrame(this.rafId);
+      this.rafId = null;
+    }
+  },
+
+  onTap(e){
+    e.stopPropagation();
+    if(!this.visible) return;
+
+    const now = performance.now();
+    if(now - this.lastTap < 250) return;
+    this.lastTap = now;
+
+    this.el.classList.remove('walking', 'jumping');
+    this.el.classList.add('happy');
+    this.state = 'happy';
+    this.stateTimer = 1400;
+
+    if(window.GalaxyFX){
+      const r = this.el.getBoundingClientRect();
+      window.GalaxyFX.burst(r.left + r.width / 2, r.top + r.height / 2);
+    }
+    this.emitHearts();
+  },
+
+  emitHearts(){
+    const emojis = ['💕', '✨', '💖', '⭐', '💗'];
+    for(let i = 0; i < 5; i++){
+      setTimeout(() => {
+        if(!this.el) return;
+        const h = document.createElement('div');
+        h.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+        h.style.cssText = `position:fixed;pointer-events:none;z-index:9999;
+          font-size:${14 + Math.random() * 8}px;
+          transition:transform 1.4s cubic-bezier(.2,.7,.3,1),opacity 1.4s ease;
+          will-change:transform,opacity;`;
+        const r = this.el.getBoundingClientRect();
+        h.style.left = (r.left + r.width / 2 - 10) + 'px';
+        h.style.top = r.top + 'px';
+        document.body.appendChild(h);
+        requestAnimationFrame(() => {
+          const tx = (Math.random() - 0.5) * 90;
+          const ty = -80 - Math.random() * 50;
+          h.style.transform = `translate(${tx}px, ${ty}px) scale(0.4) rotate(${(Math.random() - 0.5) * 360}deg)`;
+          h.style.opacity = '0';
+        });
+        setTimeout(() => h.remove(), 1500);
+      }, i * 100);
+    }
+  },
+
+  pickTarget(){
+    const w = window.innerWidth;
+    const h = window.innerHeight;
+    const pad = 70;
+    const envCX = w / 2;
+    const envCY = h * 0.68;
+
+    let tx, ty, tries = 0;
+    do{
+      tx = pad + Math.random() * (w - pad * 2);
+      ty = pad + Math.random() * (h - pad * 2);
+      tries++;
+    } while(
+      tries < 20 && (
+        Math.hypot(tx - envCX, ty - envCY) < 170 ||
+        Math.hypot(tx - this.x, ty - this.y) < 110
+      )
+    );
+
+    this.targetX = tx;
+    this.targetY = ty;
+    this.state = 'walking';
+    this.el.classList.add('walking');
+
+    // Đôi khi nhảy tưng tưng giữa đường
+    if(Math.random() < 0.45){
+      setTimeout(() => {
+        if(this.state === 'walking' && this.el){
+          this.el.classList.add('jumping');
+          setTimeout(() => this.el && this.el.classList.remove('jumping'), 650);
+        }
+      }, Math.random() * 900);
+    }
+  },
+
+  loop(){
+    if(!this.visible) return;
+    this.rafId = requestAnimationFrame(() => this.loop());
+    this.tick();
+  },
+
+  tick(){
+    if(this.state === 'idle'){
+      this.stateTimer -= 16;
+      if(this.stateTimer <= 0) this.pickTarget();
+    }
+    else if(this.state === 'walking'){
+      const dx = this.targetX - this.x;
+      const dy = this.targetY - this.y;
+      const dist = Math.hypot(dx, dy);
+
+      if(dist < 4){
+        this.state = 'idle';
+        this.stateTimer = 1200 + Math.random() * 2600;
+        this.el.classList.remove('walking');
+      } else {
+        const sp = 2.4;
+        this.x += (dx / dist) * sp;
+        this.y += (dy / dist) * sp;
+        if(Math.abs(dx) > 1) this.facing = dx > 0 ? 1 : -1;
+      }
+    }
+    else if(this.state === 'happy'){
+      this.stateTimer -= 16;
+      if(this.stateTimer <= 0){
+        this.el.classList.remove('happy');
+        this.state = 'idle';
+        this.stateTimer = 700;
+      }
+    }
+
+    this.applyTransform();
+  },
+
+  applyTransform(){
+    if(!this.el) return;
+    if(!this.petW) this.measure();
+    const flip = this.facing < 0 ? ' scaleX(-1)' : '';
+    this.el.style.transform = `translate(${this.x - this.petW / 2}px, ${this.y - this.petH / 2}px)${flip}`;
+  }
+};
+
+/* ==========================================================
+   🌊 TƯƠNG TÁC THIÊN HÀ
+   ========================================================== */
+function createRipple(x, y){
+  const ring = document.createElement('div');
+  ring.style.cssText = `
+    position: fixed;
+    left: ${x}px; top: ${y}px;
+    width: 24px; height: 24px;
+    margin-left: -12px; margin-top: -12px;
+    border: 2px solid rgba(255,200,240,0.9);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 4;
+    box-shadow: 0 0 24px rgba(255,107,157,0.8), inset 0 0 12px rgba(255,200,240,0.6);
+    transition: all 1.2s cubic-bezier(0.2, 0.8, 0.3, 1);
+    will-change: width, height, opacity;
+  `;
+  document.body.appendChild(ring);
+  requestAnimationFrame(() => {
+    ring.style.width = '220px';
+    ring.style.height = '220px';
+    ring.style.marginLeft = '-110px';
+    ring.style.marginTop = '-110px';
+    ring.style.opacity = '0';
+    ring.style.borderWidth = '0.5px';
+  });
+  setTimeout(() => ring.remove(), 1300);
+}
+
+function galaxyTapHandler(e){
+  if(e.target.closest('.flying-envelope.landed')) return;
+  if(e.target.closest('#starPet')) return; // bỏ qua nếu chạm vào bé mèo
+
+  const x = e.clientX, y = e.clientY;
+  createRipple(x, y);
+
+  if(window.GalaxyFX){
+    window.GalaxyFX.burst(x, y);
+    if(Math.random() < 0.35){
+      setTimeout(() => window.GalaxyFX.meteorFrom(x, y), 120);
+    }
+  }
+
+  for(let i = 0; i < 2; i++){
+    const s = document.createElement('span');
+    s.textContent = Math.random() < 0.5 ? '✨' : '⭐';
+    s.style.cssText = `position:fixed;left:${x}px;top:${y}px;font-size:${11 + Math.random()*8}px;pointer-events:none;z-index:6;transform:translate(-50%,-50%);transition:transform 1.1s cubic-bezier(0.2,0.8,0.3,1),opacity 1.1s ease;will-change:transform,opacity;`;
+    document.body.appendChild(s);
+    const angle = -Math.PI/2 + (Math.random() - 0.5) * 1.2;
+    const dist = 40 + Math.random() * 60;
+    requestAnimationFrame(() => {
+      s.style.transform = `translate(calc(-50% + ${Math.cos(angle)*dist}px), calc(-50% + ${Math.sin(angle)*dist}px)) scale(0.4)`;
+      s.style.opacity = '0';
+    });
+    setTimeout(() => s.remove(), 1200);
+  }
+}
+
+/* ==========================================================
+   🎵 LYRICS PLAYER
+   ========================================================== */
+let lyricToken = 0;
+
+async function startLyrics(){
+  const token = ++lyricToken;
+  const container = $('lyricContainer');
+  const lineEl = $('lyricLine');
+
+  lineEl.classList.remove('fade-out');
+  lineEl.textContent = '';
+  container.classList.remove('show');
+
+  await sleep(2500);
+  if(token !== lyricToken) return;
+
+  container.classList.add('show');
+
+  const numLines = LYRIC_LINES.length;
+  const fadeOutTime = 800;
+  const lyricTotalTime = GALAXY_DELAY_MS - 2500;
+  const timePerLine = lyricTotalTime / numLines;
+  const stayTime = timePerLine - fadeOutTime;
+
+  for(let i = 0; i < numLines; i++){
+    if(token !== lyricToken) return;
+
+    lineEl.classList.remove('fade-out');
+    lineEl.textContent = LYRIC_LINES[i];
+    lineEl.style.animation = 'none';
+    void lineEl.offsetWidth;
+    lineEl.style.animation = '';
+
+    await sleep(stayTime);
+    if(token !== lyricToken) return;
+
+    lineEl.classList.add('fade-out');
+    await sleep(fadeOutTime);
+  }
+
+  if(token === lyricToken){
+    container.classList.remove('show');
+  }
+}
+
+function stopLyrics(){
+  lyricToken++;
+  $('lyricContainer').classList.remove('show');
+  $('lyricLine').textContent = '';
+  $('lyricLine').classList.remove('fade-out');
+}
+
+/* ==========================================================
+   🎵 NHẠC NỀN
+   ========================================================== */
+let ytPlayer = null;
+let ytReady = false;
+let musicOn = false;
+let musicStarted = false;
+let pendingPlay = false;
+
+const musicBtn = $('musicToggle');
+
+function updateMusicBtn(){
+  musicBtn.textContent = musicOn ? '🔊' : '🔇';
+  musicBtn.classList.toggle('playing', musicOn);
+}
+
+function playMusic(){
+  if(!ytReady || !ytPlayer || typeof ytPlayer.playVideo !== 'function'){
+    pendingPlay = true;
+    return;
+  }
+  try{
+    ytPlayer.playVideo();
+    ytPlayer.setVolume(MUSIC_VOLUME);
+    musicOn = true;
+    pendingPlay = false;
+    updateMusicBtn();
+  } catch(err){ console.warn('playMusic error:', err); }
+}
+
+function pauseMusic(){
+  if(!ytReady || !ytPlayer) return;
+  try{
+    ytPlayer.pauseVideo();
+    musicOn = false;
+    updateMusicBtn();
+  } catch(err){}
+}
+
+function toggleMusic(e){
+  if(e){ e.stopPropagation(); e.preventDefault(); }
+  if(!musicStarted){
+    musicStarted = true;
+    playMusic();
+    return;
+  }
+  if(musicOn) pauseMusic();
+  else playMusic();
+}
+
+musicBtn.addEventListener('click', toggleMusic);
+
+document.addEventListener('pointerdown', function(e){
+  if(musicStarted) return;
+  if(e.target.closest('#musicToggle')) return;
+  musicStarted = true;
+  playMusic();
+}, { passive: true });
+
+(function loadYT(){
+  const tag = document.createElement('script');
+  tag.src = 'https://www.youtube.com/iframe_api';
+  document.head.appendChild(tag);
+})();
+
+window.onYouTubeIframeAPIReady = function(){
+  ytPlayer = new YT.Player('ytPlayer', {
+    height: '1', width: '1',
+    videoId: VIDEO_ID,
+    playerVars: {
+      autoplay: 0, controls: 0, disablekb: 1,
+      loop: 1, playlist: VIDEO_ID,
+      modestbranding: 1, playsinline: 1, rel: 0,
+      iv_load_policy: 3, fs: 0
+    },
+    events: {
+      onReady: function(){
+        ytReady = true;
+        try{ ytPlayer.setVolume(MUSIC_VOLUME); }catch(e){}
+        if(pendingPlay){ playMusic(); }
+      },
+      onStateChange: function(ev){
+        if(ev.data === 0 && musicOn){
+          try{ ytPlayer.seekTo(0); ytPlayer.playVideo(); }catch(e){}
+        }
+      }
+    }
+  });
+};
+
+/* ==========================================================
+   TIM BAY NỀN
+   ========================================================== */
+function initHearts(container, count){
+  if(!container) return;
+  const emojis = ['💐','🌸','🌷','🌺','🌹','✨','💕','🦋','🎀','⭐','💫'];
+  for(let i = 0; i < count; i++){
+    const el = document.createElement('span');
+    el.className = 'float-heart';
+    el.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+    el.style.left = Math.random() * 100 + '%';
+    el.style.fontSize = (11 + Math.random() * 22) + 'px';
+    el.style.animationDuration = (8 + Math.random() * 10) + 's';
+    el.style.animationDelay = (Math.random() * 12) + 's';
+    el.style.setProperty('--o', (0.25 + Math.random() * 0.5).toFixed(2));
+    container.appendChild(el);
+  }
+}
+
+/* ==========================================================
+   MÀN LOADING
+   ========================================================== */
+let loadingTimer = null;
+
+function startLoading(){
+  const bar = $('progressBar');
+  bar.style.width = '0%';
+  if(loadingTimer) clearInterval(loadingTimer);
+
+  let p = 0;
+  loadingTimer = setInterval(() => {
+    p += Math.random() * 9 + 4;
+    if(p >= 100){
+      p = 100;
+      bar.style.width = p + '%';
+      clearInterval(loadingTimer);
+      loadingTimer = null;
+      setTimeout(() => showScreen('screen-hold'), 600);
+      return;
+    }
+    bar.style.width = p + '%';
+  }, 120);
+}
+
+/* ==========================================================
+   MÀN GIỮ
+   ========================================================== */
+const holdBtn = $('holdBtn');
+const ring = $('ringProgress');
+const CIRC = 2 * Math.PI * 54;
+ring.style.strokeDasharray = CIRC;
+ring.style.strokeDashoffset = CIRC;
+
+let holding = false;
+let holdStart = 0;
+let rafHold = null;
+
+function startHold(e){
+  if(e.cancelable) e.preventDefault();
+  if(holding) return;
+  holding = true;
+  holdStart = performance.now();
+  ring.style.transition = '';
+  holdBtn.classList.add('holding');
+  rafHold = requestAnimationFrame(tickHold);
+}
+
+function tickHold(now){
+  if(!holding) return;
+  const progress = Math.min((now - holdStart) / HOLD_MS, 1);
+  ring.style.strokeDashoffset = CIRC * (1 - progress);
+
+  if(progress >= 1){
+    holding = false;
+    cancelAnimationFrame(rafHold);
+    ring.style.strokeDashoffset = 0;
+    holdBtn.classList.remove('holding');
+    sparkleBurst(holdBtn, 28);
+    setTimeout(() => enterGalaxyScreen(), 340);
+    return;
+  }
+  rafHold = requestAnimationFrame(tickHold);
+}
+
+function endHold(){
+  if(!holding) return;
+  holding = false;
+  cancelAnimationFrame(rafHold);
+  holdBtn.classList.remove('holding');
+  ring.style.transition = 'stroke-dashoffset .35s ease';
+  ring.style.strokeDashoffset = CIRC;
+  setTimeout(() => { ring.style.transition = ''; }, 360);
+}
+
+holdBtn.addEventListener('pointerdown', startHold);
+holdBtn.addEventListener('touchstart', startHold, { passive: false });
+window.addEventListener('pointerup', endHold);
+window.addEventListener('pointercancel', endHold);
+window.addEventListener('touchend', endHold);
+window.addEventListener('touchcancel', endHold);
+
+/* ==========================================================
+   MÀN THIÊN HÀ
+   ========================================================== */
+const flyingEnvelope = $('flyingEnvelope');
+const galaxyHint = $('galaxyHint');
+let galaxyTimer = null;
+let hintTimer = null;
+let envelopeOpening = false;
+
+function enterGalaxyScreen(){
+  showScreen('screen-galaxy');
+
+  flyingEnvelope.classList.remove('flying', 'landed', 'opening', 'zoom-out');
+  flyingEnvelope.style.pointerEvents = '';
+
+  const wishText = $('wishText');
+  wishText.style.animation = 'none';
+  void wishText.offsetWidth;
+  wishText.style.animation = '';
+
+  galaxyHint.classList.remove('show');
+  clearTimeout(hintTimer);
+  setTimeout(() => galaxyHint.classList.add('show'), 1800);
+  hintTimer = setTimeout(() => galaxyHint.classList.remove('show'), 7000);
+
+  startLyrics();
+
+  // 🐾 KHỞI ĐỘNG BÉ MÈO
+  setTimeout(() => StarPet.start(), 400);
+
+  clearTimeout(galaxyTimer);
+  galaxyTimer = setTimeout(() => triggerEnvelopeArrival(), GALAXY_DELAY_MS);
+
+  const screen = $('screen-galaxy');
+  screen.removeEventListener('pointerdown', galaxyTapHandler);
+  screen.addEventListener('pointerdown', galaxyTapHandler);
+}
+
+function triggerEnvelopeArrival(){
+  galaxyHint.classList.remove('show');
+  stopLyrics();
+
+  flyingEnvelope.classList.add('flying');
+
+  setTimeout(() => {
+    flyingEnvelope.classList.add('landed');
+    flyingEnvelope.style.pointerEvents = '';
+    sparkleBurst(flyingEnvelope, 20);
+
+    // 🐾 Bé mèo nhảy mừng khi thư tới
+    if(StarPet.visible && StarPet.el){
+      StarPet.el.classList.add('jumping');
+      setTimeout(() => StarPet.el && StarPet.el.classList.remove('jumping'), 650);
+    }
+  }, 2200);
+}
+
+/* ==========================================================
+   MỞ LÁ THƯ
+   ========================================================== */
+async function openEnvelope(){
+  if(envelopeOpening) return;
+  if(!flyingEnvelope.classList.contains('landed')) return;
+  envelopeOpening = true;
+  flyingEnvelope.style.pointerEvents = 'none';
+
+  // 🐾 Bé mèo tạm ẩn
+  StarPet.stop();
+
+  flyingEnvelope.classList.add('opening');
+  await sleep(500);
+
+  flyingEnvelope.classList.add('zoom-out');
+  await sleep(450);
+
+  showScreen('screen-letter');
+  const paper = $('letterPaper');
+  paper.classList.remove('show');
+  void paper.offsetWidth;
+  paper.classList.add('show');
+
+  await sleep(350);
+  typeLetter();
+}
+
+flyingEnvelope.addEventListener('click', openEnvelope);
+
+/* ==========================================================
+   MÀN LÁ THƯ
+   ========================================================== */
+let typingToken = 0;
+let typingActive = false;
+
+async function typeLetter(){
+  typingActive = true;
+  const token = ++typingToken;
+  const box = $('letterContent');
+  const replayBtn = $('replayBtn');
+  const paper = $('letterPaper');
+
+  box.innerHTML = '';
+  replayBtn.classList.remove('show');
+
+  for(let idx = 0; idx < LETTER_LINES.length; idx++){
+    if(token !== typingToken){ typingActive = false; return; }
+    const line = LETTER_LINES[idx];
+    const p = document.createElement('p');
+    p.className = 'letter-line' + (idx === 0 ? ' hello' : '');
+    box.appendChild(p);
+    for(const ch of line){
+      if(token !== typingToken){ typingActive = false; return; }
+      p.textContent += ch;
+      paper.scrollTop = paper.scrollHeight;
+      await sleep(window.innerWidth < 600 ? 26 : 34);
+    }
+    await sleep(360);
+  }
+
+  if(token !== typingToken){ typingActive = false; return; }
+  typingActive = false;
+  replayBtn.classList.add('show');
+  spawnPetals();
+}
+
+function renderFullLetter(){
+  typingToken++;
+  typingActive = false;
+  const box = $('letterContent');
+  box.innerHTML = '';
+  LETTER_LINES.forEach((line, idx) => {
+    const p = document.createElement('p');
+    p.className = 'letter-line' + (idx === 0 ? ' hello' : '');
+    p.textContent = line;
+    box.appendChild(p);
+  });
+  $('replayBtn').classList.add('show');
+  spawnPetals();
+}
+
+$('letterPaper').addEventListener('click', () => {
+  if(typingActive) renderFullLetter();
+});
+
+function spawnPetals(){
+  const screen = $('screen-letter');
+  const emojis = ['💐','🌸','🌷','🌺','✨','🎀','💕','🌼','⭐','💫'];
+  const count = isMobile() ? 20 : 32;
+  for(let i = 0; i < count; i++){
+    const petal = document.createElement('span');
+    petal.className = 'petal';
+    petal.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+    petal.style.left = Math.random() * 100 + '%';
+    petal.style.fontSize = (13 + Math.random() * 16) + 'px';
+    petal.style.animationDuration = (3 + Math.random() * 3) + 's';
+    petal.style.animationDelay = (Math.random() * 1.5) + 's';
+    screen.appendChild(petal);
+    setTimeout(() => petal.remove(), 9000);
+  }
+}
+
+/* ===== Xem lại ===== */
+function resetAll(){
+  typingToken++;
+  typingActive = false;
+  envelopeOpening = false;
+  clearTimeout(galaxyTimer);
+  clearTimeout(hintTimer);
+  galaxyTimer = null;
+  hintTimer = null;
+
+  stopLyrics();
+
+  // 🐾 Tắt bé mèo
+  StarPet.stop();
+
+  flyingEnvelope.classList.remove('flying', 'landed', 'opening', 'zoom-out');
+  flyingEnvelope.style.pointerEvents = '';
+  galaxyHint.classList.remove('show');
+
+  holdBtn.classList.remove('holding');
+  ring.style.transition = '';
+  ring.style.strokeDashoffset = CIRC;
+
+  $('letterContent').innerHTML = '';
+  $('replayBtn').classList.remove('show');
+  $('letterPaper').classList.remove('show');
+  document.querySelectorAll('.petal').forEach(p => p.remove());
+
+  showScreen('screen-loading');
+  startLoading();
+}
+
+$('replayBtn').addEventListener('click', resetAll);
+
+/* ===== Khởi tạo ===== */
+StarPet.init();
+initHearts($('hearts2'), 14);
+initHearts($('hearts3'), 14);
+initHearts($('hearts4'), 12);
+updateMusicBtn();
+startLoading();
+</script>
+</body>
+</html>
